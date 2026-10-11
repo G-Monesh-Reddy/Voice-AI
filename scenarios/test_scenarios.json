@@ -1,0 +1,240 @@
+{
+  "description": "Simulated multi-turn conversation scenarios for Home Credit Loan Against Property (LAP) Voice Agent. Clearly labeled as simulated conversational test data.",
+  "simulation_version": "1.0.0",
+  "scenarios": [
+    {
+      "id": "scenario_01_fully_eligible",
+      "name": "Fully Eligible Salaried Customer",
+      "customer_name": "Rahul Sharma",
+      "language": "English",
+      "description": "Customer answers all seven checklist items with full eligibility.",
+      "expected_outcome": "QUALIFIED_HANDOFF",
+      "customer_utterances": [
+        "Yes, speaking. How can I help you?",
+        "Yeah sure, I have a couple of minutes. What offer is this?",
+        "Sounds interesting. Yes, I would like to explore this loan against property.",
+        "It's a residential apartment in Gurgaon.",
+        "It is solely in my own name.",
+        "Yes, I have all the original registry and chain documents safe in my bank locker.",
+        "I am looking for around 50 lakhs.",
+        "I work as a senior software engineer in an IT firm, salaried, and my salary comes directly to my HDFC bank account.",
+        "The current market value of the flat is approximately 95 lakhs.",
+        "I want to repay it comfortably over 10 years."
+      ]
+    },
+    {
+      "id": "scenario_02_agricultural_disqualification",
+      "name": "Agricultural Property Disqualification",
+      "customer_name": "Suresh Patel",
+      "language": "Hindi",
+      "description": "Customer owns agricultural farmland which triggers immediate disqualification.",
+      "expected_outcome": "DISQUALIFIED",
+      "customer_utterances": [
+        "Haan ji, Suresh bol raha hoon.",
+        "Haan batao, do minute hain mere paas.",
+        "Haan bilkul, sunna chahta hoon kya offer hai.",
+        "Dekho mere paas gaon mein 5 acre agricultural farmland hai kheti ke liye."
+      ]
+    },
+    {
+      "id": "scenario_03_cash_income_disqualification",
+      "name": "Cash Income Disqualification",
+      "customer_name": "Vikram Singh",
+      "language": "English",
+      "description": "Customer receives income purely in cash, triggering immediate disqualification.",
+      "expected_outcome": "DISQUALIFIED",
+      "customer_utterances": [
+        "Yes, this is Vikram.",
+        "Sure, go ahead.",
+        "Yes, I am looking for funds.",
+        "It is a commercial shop in the main market.",
+        "Sole ownership, completely mine.",
+        "Yes, original deed documents are ready.",
+        "Looking for 30 lakhs.",
+        "I run a local grocery business and collect all my profit strictly in cash, no bank account deposit."
+      ]
+    },
+    {
+      "id": "scenario_04_loan_cap_exceeded_and_accepted",
+      "name": "Loan Cap Exceeded (90L) and Accepted (75L)",
+      "customer_name": "Ananya Roy",
+      "language": "English",
+      "description": "Customer requests 90 Lakhs, is informed of the 75 Lakh cap, agrees to proceed, and qualifies.",
+      "expected_outcome": "QUALIFIED_HANDOFF",
+      "customer_utterances": [
+        "Yes, speaking.",
+        "Sure, tell me.",
+        "Yes, I might need some capital.",
+        "It's a residential villa.",
+        "Jointly owned with my spouse.",
+        "Yes, we have all original documents at home.",
+        "Actually, I need 90 lakhs for my business expansion.",
+        "Okay, 75 lakhs works for now. Let's proceed with 75 lakhs.",
+        "Self-employed architect, professional fees credited to bank account.",
+        "The villa market value is around 1.8 crore.",
+        "I would prefer an 8 year tenure."
+      ]
+    },
+    {
+      "id": "scenario_05_loan_cap_exceeded_and_rejected",
+      "name": "Loan Cap Exceeded (90L) and Rejected",
+      "customer_name": "Rajiv Khanna",
+      "language": "English",
+      "description": "Customer requests 90 Lakhs and declines to proceed with the 75 Lakh cap.",
+      "expected_outcome": "DISQUALIFIED",
+      "customer_utterances": [
+        "Yes, Rajiv here.",
+        "Yes, please tell me.",
+        "Yes, interested.",
+        "Commercial office.",
+        "Sole owner.",
+        "Yes, original title deeds available.",
+        "I strictly need 90 lakhs.",
+        "No, 75 lakhs is too low for my requirement, please cancel."
+      ]
+    },
+    {
+      "id": "scenario_06_tenure_boundary_low",
+      "name": "Tenure Disqualification (2 Years)",
+      "customer_name": "Deepak Mehta",
+      "language": "English",
+      "description": "Customer requests a 2-year tenure which is below the 3-year minimum.",
+      "expected_outcome": "DISQUALIFIED",
+      "customer_utterances": [
+        "Yes speaking.",
+        "Yes, go ahead.",
+        "Yes, I am interested.",
+        "Residential flat.",
+        "Sole owner.",
+        "Original documents are available.",
+        "40 lakhs.",
+        "Salaried in MNC, salary in bank account.",
+        "Market value is 80 lakhs.",
+        "I want to close it quickly in just 2 years."
+      ]
+    },
+    {
+      "id": "scenario_07_tenure_boundary_high",
+      "name": "Tenure Disqualification (20 Years)",
+      "customer_name": "Manoj Verma",
+      "language": "English",
+      "description": "Customer insists on a 20-year tenure which exceeds the 15-year maximum.",
+      "expected_outcome": "DISQUALIFIED",
+      "customer_utterances": [
+        "Yes speaking.",
+        "Yes, I have time.",
+        "Interested.",
+        "Commercial building.",
+        "Sole owner.",
+        "Original documents available.",
+        "60 lakhs.",
+        "Self-employed trader, bank transactions.",
+        "Market value 1.5 crore.",
+        "I want a long tenure of 20 years to keep EMI low."
+      ]
+    },
+    {
+      "id": "scenario_08_busy_customer_reschedule",
+      "name": "Busy Customer Reschedule Flow",
+      "customer_name": "Neha Gupta",
+      "language": "English",
+      "description": "Customer is driving and asks for a callback tomorrow morning.",
+      "expected_outcome": "CALL_TERMINATED",
+      "customer_utterances": [
+        "Yes, this is Neha.",
+        "I am currently driving and busy. Please call me tomorrow morning at 11 am."
+      ]
+    },
+    {
+      "id": "scenario_09_existing_loan_transfer",
+      "name": "Existing Loan Balance Transfer Intent",
+      "customer_name": "Amit Saxena",
+      "language": "English",
+      "description": "Customer already has a property loan with another bank and wants to reduce EMI / transfer balance.",
+      "expected_outcome": "TRANSFER_BRANCH",
+      "customer_utterances": [
+        "Yes, Amit speaking.",
+        "Sure, go ahead.",
+        "Actually, I already have an existing property loan with another bank and I want to reduce my EMI by transferring the balance."
+      ]
+    },
+    {
+      "id": "scenario_10_compound_and_out_of_order",
+      "name": "Compound Answers with Out-of-Order Extraction",
+      "customer_name": "Priya Nair",
+      "language": "English",
+      "description": "Customer answers multiple checklist items in one utterance, agent adapts without re-asking.",
+      "expected_outcome": "QUALIFIED_HANDOFF",
+      "customer_utterances": [
+        "Yes, speaking.",
+        "Yes, please tell me.",
+        "Look, I am looking for 45 lakhs for 7 years on my sole-owned residential house worth 1 crore. I work in a bank with salaried income credited to account.",
+        "Yes, I have all original registry papers in my bank locker.",
+        "The market value is 1 crore as I mentioned."
+      ]
+    },
+    {
+      "id": "scenario_11_correction_residential_to_agricultural",
+      "name": "Correction from Residential to Agricultural",
+      "customer_name": "Kailash Chand",
+      "language": "English",
+      "description": "Customer first says residential but then corrects to agricultural property.",
+      "expected_outcome": "DISQUALIFIED",
+      "customer_utterances": [
+        "Yes, speaking.",
+        "Yes, I am free.",
+        "Yes, let's discuss.",
+        "Well, residential... actually wait, it's strictly agricultural farmland under cultivation.",
+        "Sole owner."
+      ]
+    },
+    {
+      "id": "scenario_12_interruption_interest_rate_query",
+      "name": "Customer Interrupts Asking for Interest Rate",
+      "customer_name": "Sunil Joshi",
+      "language": "English",
+      "description": "Customer interrupts to ask about the interest rate before answering, agent answers and resumes flow.",
+      "expected_outcome": "QUALIFIED_HANDOFF",
+      "customer_utterances": [
+        "Yes, speaking.",
+        "Yes, two minutes.",
+        "Before I say yes, what is your interest rate?",
+        "Okay fair enough. Yes, I am interested.",
+        "Residential flat in Bangalore.",
+        "Joint ownership with my wife.",
+        "Yes, all original documents are with us.",
+        "35 lakhs.",
+        "Salaried software architect, bank account transfer.",
+        "Market value is around 75 lakhs.",
+        "5 years tenure."
+      ]
+    },
+    {
+      "id": "scenario_13_wrong_person",
+      "name": "Wrong Person / Wrong Number",
+      "customer_name": "Arun Kumar",
+      "language": "English",
+      "description": "Person answering clarifies this is a wrong number.",
+      "expected_outcome": "CALL_TERMINATED",
+      "customer_utterances": [
+        "No, this is wrong number, Arun doesn't use this number anymore."
+      ]
+    },
+    {
+      "id": "scenario_14_missing_original_documents",
+      "name": "Original Documents Confirmed Lost / Unavailable",
+      "customer_name": "Kavita Rao",
+      "language": "English",
+      "description": "Customer confirms original documents are lost and cannot be produced.",
+      "expected_outcome": "DISQUALIFIED",
+      "customer_utterances": [
+        "Yes, Kavita speaking.",
+        "Yes, go ahead.",
+        "Interested.",
+        "Residential home.",
+        "Sole owner.",
+        "No, unfortunately the original property documents are lost and unavailable, I only have photocopies."
+      ]
+    }
+  ]
+}

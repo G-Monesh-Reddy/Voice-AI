@@ -1,0 +1,94 @@
+==============================================================================
+HOME CREDIT LAP VOICE AGENT - ELIGIBLE CUSTOMER TRANSCRIPT
+NOTE: THIS IS A LOCALLY SIMULATED CONVERSATION TRANSCRIPT FOR TESTING PURPOSES.
+==============================================================================
+
+Customer Name: Rahul Sharma
+Language: English
+Agent Name: Pooja (Female)
+Lender: Home Credit India
+LLM Engine: Google Gemini API (with Deterministic Business Rules Engine)
+Outcome: QUALIFIED_HANDOFF (Preliminary Criteria Met)
+
+------------------------------------------------------------------------------
+CONVERSATION LOG
+------------------------------------------------------------------------------
+
+[AGENT (Pooja)]: Hello, am I speaking with Rahul Sharma?
+
+[CUSTOMER (Rahul Sharma)]: Yes, speaking. How can I help you?
+  -> Extracted Facts: {"identity_verified": true, "wrong_person": false}
+  -> Stage: AVAILABILITY_CHECK
+[AGENT (Pooja)]: I am calling from Home Credit regarding an exclusive property loan benefit. Do you have two minutes to speak?
+
+[CUSTOMER (Rahul Sharma)]: Yeah sure, I have a couple of minutes. What offer is this?
+  -> Extracted Facts: {"customer_available": true}
+  -> Stage: OFFER_PRESENTATION
+[AGENT (Pooja)]: Rahul Sharma, based on your relationship with Home Credit, you are eligible for our special Loan Against Property offer of up to ₹75 Lakhs for your personal or business needs. This is a preliminary assessment call to check your requirements. Would you be interested in exploring this today?
+
+[CUSTOMER (Rahul Sharma)]: Sounds interesting. Yes, I would like to explore this loan against property.
+  -> Extracted Facts: {"offer_accepted": true}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: What type of property do you own—is it residential, commercial, or industrial?
+
+[CUSTOMER (Rahul Sharma)]: It is a residential apartment in Gurgaon.
+  -> Extracted Facts: {"property_type": "residential"}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: Is the property solely in your name, or is it jointly owned?
+
+[CUSTOMER (Rahul Sharma)]: It is solely in my own name.
+  -> Extracted Facts: {"ownership_status": "sole"}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: Do you have the original property documents available for physical verification during loan processing? (You do not need to hold them right now during the call).
+
+[CUSTOMER (Rahul Sharma)]: Yes, I have all the original registry and chain documents safe in my bank locker.
+  -> Extracted Facts: {"original_documents_available": "available"}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: How much loan amount are you looking to borrow?
+
+[CUSTOMER (Rahul Sharma)]: I am looking for around 50 lakhs.
+  -> Extracted Facts: {"loan_amount": 5000000}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: Are you salaried or self-employed, and do you receive your primary income in a bank account or in cash?
+
+[CUSTOMER (Rahul Sharma)]: I work as a senior software engineer in an IT firm, salaried, and my salary comes directly to my HDFC bank account.
+  -> Extracted Facts: {"occupation": "salaried", "income_mode": "bank"}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: What is the approximate current market value of your property?
+
+[CUSTOMER (Rahul Sharma)]: The current market value of the flat is approximately 95 lakhs.
+  -> Extracted Facts: {"property_market_value": 9500000}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: Over how many years would you prefer to repay the loan—between 3 and 15 years?
+
+[CUSTOMER (Rahul Sharma)]: I want to repay it comfortably over 10 years.
+  -> Extracted Facts: {"tenure_years": 10}
+  -> Stage: QUALIFIED_HANDOFF
+  -> Gating Check: ALL 7 CHECKLIST ITEMS VALID AND VERIFIED
+[AGENT (Pooja)]: Congratulations Rahul Sharma, you have successfully met our preliminary criteria for the Loan Against Property offer! A senior loan expert from Home Credit will contact you shortly to walk you through the exact interest rate, documentation verification, and fast sanction process. Thank you, and have a wonderful day!
+
+*** CALL TERMINATED: SENIOR EXPERT HANDOFF AUTHORIZED ***
+
+==============================================================================
+FINAL SESSION STATE SUMMARY:
+{
+  "customer_name": "Rahul Sharma",
+  "identity_verified": true,
+  "stage": "qualified_handoff",
+  "is_transfer_lead": false,
+  "disqualified": false,
+  "disqualification_reason": null,
+  "terminal": true,
+  "checklist": {
+    "property_type": "residential",
+    "ownership_status": "sole",
+    "original_documents": "available",
+    "loan_amount": "₹5,000,000",
+    "loan_cap_confirmed": true,
+    "occupation": "salaried",
+    "income_mode": "bank",
+    "property_market_value": "₹9,500,000",
+    "tenure_years": "10 years"
+  }
+}
+==============================================================================

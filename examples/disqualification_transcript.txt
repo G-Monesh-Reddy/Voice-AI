@@ -1,0 +1,65 @@
+==============================================================================
+HOME CREDIT LAP VOICE AGENT - DISQUALIFICATION TRANSCRIPT
+NOTE: THIS IS A LOCALLY SIMULATED CONVERSATION TRANSCRIPT FOR TESTING PURPOSES.
+==============================================================================
+
+Customer Name: Suresh Patel
+Language: Hindi
+Agent Name: Pooja (Female)
+Lender: Home Credit India
+LLM Engine: Google Gemini API (with Deterministic Business Rules Engine)
+Outcome: DISQUALIFIED (Agricultural Property Ineligible)
+
+------------------------------------------------------------------------------
+CONVERSATION LOG
+------------------------------------------------------------------------------
+
+[AGENT (Pooja)]: Namaskar, kya meri baat Suresh Patel ji se ho rahi hai?
+
+[CUSTOMER (Suresh Patel)]: Haan ji, Suresh bol raha hoon.
+  -> Extracted Facts: {"identity_verified": true, "wrong_person": false}
+  -> Stage: AVAILABILITY_CHECK
+[AGENT (Pooja)]: Main Home Credit se baat kar rahi hoon hamare exclusive property loan benefit ke baare mein. Kya aapke paas baat karne ke liye do minute hain?
+
+[CUSTOMER (Suresh Patel)]: Haan batao, do minute hain mere paas.
+  -> Extracted Facts: {"customer_available": true}
+  -> Stage: OFFER_PRESENTATION
+[AGENT (Pooja)]: Suresh Patel ji, Home Credit ke sath aapke relation ke aadhar par hum aapke liye ₹75 Lakh tak ka vishesh Loan Against Property offer le kar aaye hain. Yeh ek preliminary assessment call hai. Kya aap iski jaankari lena chahenge?
+
+[CUSTOMER (Suresh Patel)]: Haan bilkul, sunna chahta hoon kya offer hai.
+  -> Extracted Facts: {"offer_accepted": true}
+  -> Stage: ELIGIBILITY_CHECKLIST
+[AGENT (Pooja)]: Aapke paas kis tarah ki property hai—residential, commercial, ya industrial?
+
+[CUSTOMER (Suresh Patel)]: Dekho mere paas gaon mein 5 acre agricultural farmland hai kheti ke liye.
+  -> Extracted Facts: {"property_type": "agricultural"}
+  -> Deterministic Rule Check: Agricultural property is strictly not accepted.
+  -> Stage: DISQUALIFIED
+  -> Terminal Status: TRUE
+[AGENT (Pooja)]: Suresh Patel ji, jaankari saajha karne ke liye dhanyawaad. Khed hai ki is vishesh offer ki eligibility criteria ke anusaar, hum abhi aage nahi badh sakte. Home Credit ke sath jude rehne ke liye aapka aabhar. Shubh din!
+
+*** CALL TERMINATED: IMMEDIATE DISQUALIFICATION ***
+
+==============================================================================
+FINAL SESSION STATE SUMMARY:
+{
+  "customer_name": "Suresh Patel",
+  "identity_verified": true,
+  "stage": "disqualified",
+  "is_transfer_lead": false,
+  "disqualified": true,
+  "disqualification_reason": "Agricultural property is not eligible for this offer.",
+  "terminal": true,
+  "checklist": {
+    "property_type": "agricultural",
+    "ownership_status": "UNKNOWN",
+    "original_documents": "UNKNOWN",
+    "loan_amount": "UNKNOWN",
+    "loan_cap_confirmed": null,
+    "occupation": "UNKNOWN",
+    "income_mode": "UNKNOWN",
+    "property_market_value": "UNKNOWN",
+    "tenure_years": "UNKNOWN"
+  }
+}
+==============================================================================

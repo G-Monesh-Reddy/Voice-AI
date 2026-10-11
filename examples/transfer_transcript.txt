@@ -1,0 +1,60 @@
+==============================================================================
+HOME CREDIT LAP VOICE AGENT - LOAN TRANSFER ROUTING TRANSCRIPT
+NOTE: THIS IS A LOCALLY SIMULATED CONVERSATION TRANSCRIPT FOR TESTING PURPOSES.
+==============================================================================
+
+Customer Name: Amit Saxena
+Language: English
+Agent Name: Pooja (Female)
+Lender: Home Credit India
+LLM Engine: Google Gemini API (with Deterministic Business Rules Engine)
+Outcome: TRANSFER_BRANCH (Forwarded to Dedicated Loan Transfer Specialist)
+
+------------------------------------------------------------------------------
+CONVERSATION LOG
+------------------------------------------------------------------------------
+
+[AGENT (Pooja)]: Hello, am I speaking with Amit Saxena?
+
+[CUSTOMER (Amit Saxena)]: Yes, Amit speaking.
+  -> Extracted Facts: {"identity_verified": true, "wrong_person": false}
+  -> Stage: AVAILABILITY_CHECK
+[AGENT (Pooja)]: I am calling from Home Credit regarding an exclusive property loan benefit. Do you have two minutes to speak?
+
+[CUSTOMER (Amit Saxena)]: Sure, go ahead.
+  -> Extracted Facts: {"customer_available": true}
+  -> Stage: OFFER_PRESENTATION
+[AGENT (Pooja)]: Amit Saxena, based on your relationship with Home Credit, you are eligible for our special Loan Against Property offer of up to ₹75 Lakhs for your personal or business needs. This is a preliminary assessment call to check your requirements. Would you be interested in exploring this today?
+
+[CUSTOMER (Amit Saxena)]: Actually, I already have an existing property loan with another bank and I want to reduce my EMI by transferring the balance.
+  -> Extracted Facts: {"existing_property_loan": true, "emi_reduction_intent": true}
+  -> Deterministic Transfer Rule: Existing loan with balance transfer / EMI reduction detected.
+  -> Stage: TRANSFER_BRANCH
+  -> Terminal Status: TRUE
+[AGENT (Pooja)]: We definitely assist with loan balance transfers and EMI reduction. I am forwarding your request directly to our dedicated Loan Transfer Specialist, who will contact you shortly with the best refinancing options. Thank you for choosing Home Credit!
+
+*** CALL TERMINATED: ROUTED TO LOAN TRANSFER SPECIALIST ***
+
+==============================================================================
+FINAL SESSION STATE SUMMARY:
+{
+  "customer_name": "Amit Saxena",
+  "identity_verified": true,
+  "stage": "transfer_branch",
+  "is_transfer_lead": true,
+  "disqualified": false,
+  "disqualification_reason": null,
+  "terminal": true,
+  "checklist": {
+    "property_type": "UNKNOWN",
+    "ownership_status": "UNKNOWN",
+    "original_documents": "UNKNOWN",
+    "loan_amount": "UNKNOWN",
+    "loan_cap_confirmed": null,
+    "occupation": "UNKNOWN",
+    "income_mode": "UNKNOWN",
+    "property_market_value": "UNKNOWN",
+    "tenure_years": "UNKNOWN"
+  }
+}
+==============================================================================
